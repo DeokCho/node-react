@@ -26,6 +26,7 @@ const RegisterPage = (props) => {
     }
 
     const onSubmitHandler = e => {
+        e.preventDefault()
         if(password!==confirmPassword){
             return alert('비밀번호가 일치하지 않습니다.')
         }
@@ -38,10 +39,10 @@ const RegisterPage = (props) => {
 
         dispatch(registerUser(body))
             .then(response => {
-                if(response.payload.loginSucess){
+                if(response.payload.success){
                     props.history.push('/')
                 } else {
-                    alert('Error')
+                    alert('Failed to SignUp')
                 }
             })
     }
