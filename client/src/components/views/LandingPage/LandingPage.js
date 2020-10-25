@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import {Link} from 'react-router-dom'
 import axios from 'axios';
+import {withRouter} from 'react-router-dom'
 
 const LandingPage = props => {
     useEffect(()=>{
@@ -35,4 +36,4 @@ const LandingPage = props => {
     );
 };
 
-export default LandingPage;
+export default withRouter(LandingPage);
